@@ -10,9 +10,7 @@ RUN echo "$TZ" > /etc/timezone
 RUN apt-get update
 RUN apt-get install -y tzdata
 RUN apt-get -qq update
-RUN apt-get -qq install -y git python3 python3-pip
-locales python3-lxml aria2
-curl pv jq nginx npm
+RUN apt-get -qq install -y git python3 python3-pip locales python3-lxml aria2 curl pv jq nginx npm
 
 COPY requirements.txt .
 RUN pip3 install --no-cache-dir -r requirements.txt &&
